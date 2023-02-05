@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+</head>
+<body>
+
+        <h1>Add an Student</h1>
+        <a href="/">HOME</a><br><br><a href="/stud-list">LIST</a><br><br>
+        <font color="green"> {{message}}</font>
+        {% for item  in smessage %}
+              <font color="red"> {{item}}</font> <br>
+        {% endfor %}
+        <form action="/stud-save" method="post">
+              student rollno : <input type="text" name="rno" /> <br><br>
+            student Name : <input type="text" name="sname" /> <br><br>
+            student Email : <input type="text" name="semail" /> <br><br>
+            student dept : <select name="sdept">
+                                <option value="CE"> Computer Engineer</option>
+                                 <option value="ME"> Mechanical Engineer</option>
+                                 <option value="CIE"> Civil Engineer</option>
+                                 <option value="EE"> Electrical Engineer</option>
+        </select><br><br>
+            student fees : <input type="text" name="sfees" /> <br><br>
+            <input type="submit">
+
+
+        </form>
+
+
+
+</body>

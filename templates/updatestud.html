@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Update Students</h1>
+
+     <a href="/">HOME</a><br><br>
+        <a href="/stud-list">List Student</a> <br><br>
+
+    <form action="/stud-edit" method="post">
+              student rollno : <input type="text" name="rno" readonly value="{{record.rollno}}"/> <br><br>
+            student Name : <input type="text" name="sname" value={{record.s_name}}" /> <br><br>
+            student Email : <input type="text" name="semail" value={{record.s_email}}"/> <br><br>
+
+            student dept : <select name="sdept">
+                               <option value="None">---select---</option>
+                                <option value="CE" {% if record.s_dept == 'CE' %} selected {%endif%}> Computer Engineer</option>
+                                 <option value="ME" {% if record.s_dept == 'ME' %} selected {%endif%}> Mechanical Engineer</option>
+                                 <option value="CIE" {% if record.s_dept == 'CIE' %} selected {%endif%}> Civil Engineer</option>
+                                 <option value="EE" {% if record.s_dept == 'EE' %} selected {%endif%}> Electrical Engineer</option>
+        </select><br><br>
+            student fees : <input type="text" name="sfees" value="{{record.s_fees}}" /> <br><br>
+            <input type="submit">
+         </form>
+</body>
+</html>

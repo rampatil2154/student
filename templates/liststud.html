@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Student</title>
+</head>
+<body>
+
+        <h1>List Of Students</h1> <br><br>
+         <a href="/">HOME</a><br><br>  <a href="/add-stud">Add student</a><br><br>
+
+        <table border="1">
+
+            <thead>
+                    <th><a href="/sort/roll"> Student Roll_no </a></th>
+                    <th><a href="/sort/name"> Student Name </a></th>
+                    <th>Student Email </th>
+                    <th><a href="/sort/dept"> Student Dept </a></th>
+                    <th><a href="/sort/fee"> Student Fees </a></th>
+                    <th>Action</th>
+            </thead>
+        <tbody>
+
+            {% for stud in slist %}
+            <tr>
+                <td>{{stud.rollno}}</td>
+                <td>{{stud.s_name}}</td>
+                <td>{{stud.s_email}}</td>
+                <td>{{stud.s_dept}}</td>
+                <td>{{stud.s_fees}}</td>
+
+
+                <td><a href="/stud-delete/{{stud.rollno}}"> DELETE </a>
+                    <a href="/stud-edit/{{stud.rollno}}"> EDIT </a>
+                </td>
+
+
+
+            </tr>
+        {% endfor %}
+</tbody>
+
+
+
+        </table>
+
+<br><br><br><br><br><br>
+    {{message}}<br><br>
+    <form action="/stud-fee-range" method="post">
+
+        Student in Fees Range :
+                      Start Fees : <input type="text" name="ffee"> End Fees : <input type="text" name="sfee"><br><br>
+                    <input type="submit">
+
+
+    </form>
+
+
+      <table border="1">
+
+            <thead>
+                    <th><a href="/sort/roll"> Student Roll_no </a></th>
+                    <th><a href="/sort/name"> Student Name </a></th>
+                    <th>Student Email </th>
+                    <th><a href="/sort/dept"> Student Dept </a></th>
+                    <th><a href="/sort/fee"> Student Fees </a></th>
+                    <th>Action</th>
+            </thead>
+         <tbody>
+
+            {% for stud in studs %}
+            <tr>
+                <td>{{stud.rollno}}</td>
+                <td>{{stud.s_name}}</td>
+                <td>{{stud.s_email}}</td>
+                <td>{{stud.s_dept}}</td>
+                <td>{{stud.s_fees}}</td>
+
+
+                <td><a href="/stud-delete/{{stud.rollno}}"> DELETE </a>
+                    <a href="/stud-edit/{{stud.rollno}}"> EDIT </a>
+                </td>
+
+
+
+            </tr>
+        {% endfor %}
+</tbody>
+
+
+        </table>
+
+
+
+</body>
+</html>
